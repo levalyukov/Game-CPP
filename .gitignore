@@ -1,0 +1,4 @@
+*.vsidx
+/out
+/.vs
+/x64

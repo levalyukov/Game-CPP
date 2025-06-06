@@ -13,21 +13,21 @@ const int WINDOW_WIDTH = 1280;
 const int WINDOW_HEGHT = 720;
 
 class Game {
-public:
-	Game();
-	void run();
+	public:
+		Game();
+		void run();
 
-private:
-	void processEvent();
-	void render();
+	private:
+		void processEvent();
+		void render();
 
-	sf::RenderWindow window;
-	sf::Color background = sf::Color(213, 11, 111);
-	sf::Event event;
-	sf::Clock clock;
+		sf::RenderWindow window;
+		sf::Color background = sf::Color(213, 11, 111);
+		sf::Event event;
+		sf::Clock clock;
 
-	Player player;
-	Tilemap tilemap;
+		Player player;
+		Tilemap tilemap;
 
-	float deltaTime = clock.restart().asSeconds();
+		float deltaTime = clock.restart().asSeconds();
 };

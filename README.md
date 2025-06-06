@@ -2,8 +2,6 @@
 
 Delicious Soup - 2D top-down game about cooking delicious soup! Developed in C++ with SFML v2.6.2 library.
 
-![img]()
-
 ## Game functional
 
 - [ ] User Interface
@@ -19,6 +17,11 @@ Delicious Soup - 2D top-down game about cooking delicious soup! Developed in C++
 - [X] Player
 - [ ] Entity
 - [ ] NPC
-- [ ] 
 
-test
+## Install using CMake
+
+```bash
+git clone https://github.com/levalyukov/Game-CPP.git
+cd Game-CPP
+cmake -B build
+```

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(Game-CPP)
 
-set(SFML_ROOT "H:/cpp-libs/SFML")
+set(SFML_ROOT "C:/cpp-libs/SFML")
 set(SFML_DIR "${SFML_ROOT}/lib/cmake/SFML")
 
 find_package(SFML COMPONENTS system window graphics REQUIRED)

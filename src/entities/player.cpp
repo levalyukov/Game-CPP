@@ -14,15 +14,15 @@ static std::string oldDirection = "";
 
 Player::Player() {
 	if (!texture_idle.loadFromFile("../../../assets/Textures/character_idle.png")) {
-		std::cout << "Error: character.png not loaded." << std::endl;
+		std::cout << "Error: character_idle.png not loaded." << std::endl;
 		return;
 	};
 	if (!texture_walk_horizontal.loadFromFile("../../../assets/Textures/character_walk_horizontal.png")) {
-		std::cout << "Error: character.png not loaded." << std::endl;
+		std::cout << "Error: character_walk_horizontal.png not loaded." << std::endl;
 		return;
 	};
 	if (!texture_walk_vertical.loadFromFile("../../../assets/Textures/character_walk_vertical.png")) {
-		std::cout << "Error: character.png not loaded." << std::endl;
+		std::cout << "Error: character_walk_vertical.png not loaded." << std::endl;
 		return;
 	};
 

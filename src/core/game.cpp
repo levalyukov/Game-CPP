@@ -26,6 +26,8 @@ void Game::render() {
 	// Game
 	tilemap.render(window);
 	player.render(window, deltaTime);
+	window.setView(window.getDefaultView());
+	ui.render(window);
 
 	window.display();
 }

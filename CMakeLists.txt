@@ -11,6 +11,8 @@ add_executable(MyApp "src/main.cpp"
 "src/entities/player.cpp" 
 "src/systems/tilemap/tilemap.cpp" 
 "src/systems/animations/animations.cpp"
+"src/ui/ui.cpp"
+"src/ui/ui.h"
 )
 target_include_directories(MyApp PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(MyApp PRIVATE sfml-system sfml-window sfml-graphics)

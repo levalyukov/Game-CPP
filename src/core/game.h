@@ -29,7 +29,7 @@ class Game {
 
 		Player player;
 		Tilemap tilemap;
-		UI ui;
+		//	UI ui;
 
 		float deltaTime = clock.restart().asSeconds();
 };

@@ -84,7 +84,7 @@ void Player::movement(float& deltaTime) {
 
 	// Animation play
 	if (isMoving) {
-		float animationSpeed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? .075f : .1f;
+		float animationSpeed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? 1.5f : 2.0f;
 		sf::Texture& target_texture = (currentDirection == "up" || currentDirection == "down") ? texture_walk_vertical : texture_walk_horizontal;
 
 		if (currentDirection == "up") {

@@ -8,7 +8,7 @@
 class Tilemap {
 	public:
 		Tilemap();
-		void render(sf::RenderWindow&);
+		void render(sf::RenderWindow& window);
 
 	private:
 		const int TILE_SIZE = 16 * 4;

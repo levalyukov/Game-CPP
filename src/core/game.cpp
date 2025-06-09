@@ -20,12 +20,6 @@ void Game::processEvent() {
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-
-		if (event.type == sf::Event::Resized) {
-			gameView.setSize(event.size.width, event.size.height);
-			uiView.setSize(event.size.width, event.size.height);
-			uiView.setCenter(event.size.width / 2.f, event.size.height / 2.f);
-		}
 	}
 }
 
@@ -38,7 +32,7 @@ void Game::render() {
 	player.render(window, deltaTime, gameView);
 
 	window.setView(uiView);
-	ui.render(window);
+	ui.render(window, uiView);
 
 	window.display();
 }

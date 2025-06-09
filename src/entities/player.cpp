@@ -32,10 +32,10 @@ Player::Player() {
 	view.setSize({ 1280,720 });
 }
 
-void Player::render(sf::RenderWindow& window, float& deltaTime) {
+void Player::render(sf::RenderWindow& window, float& deltaTime, sf::View& gameView) {
 	window.draw(sprite);
 	movement(deltaTime);
-	camera(window);
+	gameView.setCenter(sprite.getPosition());
 }
 
 void Player::movement(float& deltaTime) {
@@ -154,9 +154,4 @@ void Player::movement(float& deltaTime) {
 			walk_RIGHT = animWalk_RIGHT;
 		}
 	}
-}
-
-void Player::camera(sf::RenderWindow& window) {
-	window.setView(view);
-	view.setCenter(sprite.getPosition());
 }

@@ -7,7 +7,7 @@
 
 #include "../entities/player.h"
 #include "../systems/tilemap/tilemap.h"
-#include "../ui/ui.h"
+#include "../systems/ui/ui.h"
 
 const std::string WINDOW_TITLE = "Simple Game";
 const int WINDOW_WIDTH = 1280;
@@ -26,10 +26,12 @@ class Game {
 		sf::Color background = sf::Color(85, 110, 74);
 		sf::Event event;
 		sf::Clock clock;
+		sf::View gameView;
+		sf::View uiView;
 
 		Player player;
 		Tilemap tilemap;
-		//	UI ui;
+		UI ui;
 
 		float deltaTime = clock.restart().asSeconds();
 };

@@ -13,7 +13,7 @@ const int RUN_SPEED = 6.0f;
 class Player {
 	public:
 		Player();
-		void render(sf::RenderWindow& window, float& deltaTime);
+		void render(sf::RenderWindow& window, float& deltaTime, sf::View& gameView);
 		void movement(float& deltaTime);
 
 	private:
@@ -30,6 +30,4 @@ class Player {
 		sf::Vector2i animWalk_DOWN = { 0,0 };
 		sf::Vector2i animWalk_LEFT = { 0,0 };
 		sf::Vector2i animWalk_RIGHT = { 0,16 };
-
-		void camera(sf::RenderWindow& window);
 };

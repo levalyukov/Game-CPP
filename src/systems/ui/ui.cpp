@@ -13,8 +13,8 @@ void UI::initilize(sf::Font& font) {
 		std::cout << "Error: 'arial.ttf' not loaded." << std::endl;
 		return;
 	}
-	test_text.setPosition(10.f, 10.f);
-	test_text.setString("Hello, Gamedev");
+	test_text.setString("UI Text");
 	test_text.setCharacterSize(50);
 	test_text.setFont(font);
+	test_text.setPosition(10.f, 10.f);
 }

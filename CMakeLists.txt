@@ -6,16 +6,16 @@ set(SFML_DIR "${SFML_ROOT}/lib/cmake/SFML")
 
 find_package(SFML COMPONENTS system window graphics REQUIRED)
 
-add_executable(MyApp "src/main.cpp" 
+add_executable(Game "src/main.cpp" 
 "src/core/game.cpp" 
 "src/entities/player.cpp" 
 "src/systems/tilemap/tilemap.cpp" 
 "src/systems/animations/animations.cpp"
-"src/ui/ui.cpp"
-"src/ui/ui.h"
+"src/systems/ui/ui.cpp"
+"src/systems/ui/ui.h"
 )
-target_include_directories(MyApp PRIVATE ${SFML_INCLUDE_DIRS})
-target_link_libraries(MyApp PRIVATE sfml-system sfml-window sfml-graphics)
+target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
+target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-graphics)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(SFML_DLL_SUFFIX "-d-2.dll")
@@ -23,10 +23,10 @@ else()
     set(SFML_DLL_SUFFIX "-2.dll")
 endif()
 
-add_custom_command(TARGET MyApp POST_BUILD
+add_custom_command(TARGET Game POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${SFML_ROOT}/bin/sfml-system${SFML_DLL_SUFFIX}"
         "${SFML_ROOT}/bin/sfml-window${SFML_DLL_SUFFIX}"
         "${SFML_ROOT}/bin/sfml-graphics${SFML_DLL_SUFFIX}"
-        "$<TARGET_FILE_DIR:MyApp>"
+        "$<TARGET_FILE_DIR:Game>"
 )

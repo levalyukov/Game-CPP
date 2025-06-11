@@ -30,7 +30,7 @@ void Game::render() {
 	// Game
 	window.setView(gameView);
 	tilemap.render(window);
-	player.render(window, gameView);
+	player.render(window, deltaTime, gameView);
 
 	window.setView(uiView);
 	ui.render(window, uiView);

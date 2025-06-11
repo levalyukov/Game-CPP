@@ -11,7 +11,7 @@ void Animations::UpdateAnimation(
     float frameDuration,
     float deltaTime
 ) {
-    timer += 0.16f;
+    timer += deltaTime;
     if (timer >= frameDuration) {
         sprite.setTexture(texture);
         timer = 0;

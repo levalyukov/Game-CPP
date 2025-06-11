@@ -37,4 +37,7 @@ class Game {
 		Player player;
 		Tilemap tilemap;
 		UI ui;
+
+		float rawDelta = clock.restart().asSeconds();
+		float deltaTime = std::min(rawDelta, 0.1f);
 };

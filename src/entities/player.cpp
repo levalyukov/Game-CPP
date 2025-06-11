@@ -13,18 +13,9 @@ sf::Vector2i walk_RIGHT;
 static std::string oldDirection = "";
 
 Player::Player() {
-	if (!texture_idle.loadFromFile("../../../assets/Textures/character_idle.png")) {
-		std::cout << "Error: character_idle.png not loaded." << std::endl;
-		return;
-	};
-	if (!texture_walk_horizontal.loadFromFile("../../../assets/Textures/character_walk_horizontal.png")) {
-		std::cout << "Error: character_walk_horizontal.png not loaded." << std::endl;
-		return;
-	};
-	if (!texture_walk_vertical.loadFromFile("../../../assets/Textures/character_walk_vertical.png")) {
-		std::cout << "Error: character_walk_vertical.png not loaded." << std::endl;
-		return;
-	};
+	if (!texture_idle.loadFromFile("../../../assets/Textures/character_idle.png")) return;
+	if (!texture_walk_horizontal.loadFromFile("../../../assets/Textures/character_walk_horizontal.png")) return;
+	if (!texture_walk_vertical.loadFromFile("../../../assets/Textures/character_walk_vertical.png")) return;
 
 	sprite.setTexture(texture_idle);
 	sprite.setTextureRect(sf::IntRect(16, 0, 16, 16));
@@ -32,13 +23,13 @@ Player::Player() {
 	view.setSize({ 1280,720 });
 }
 
-void Player::render(sf::RenderWindow& window, float& deltaTime, sf::View& gameView) {
+void Player::render(sf::RenderWindow& window, float deltaTime, sf::View& gameView) {
 	window.draw(sprite);
 	movement(deltaTime);
 	gameView.setCenter(sprite.getPosition());
 }
 
-void Player::movement(float& deltaTime) {
+void Player::movement(float deltaTime) {
 	bool movementUp = false;
 	bool movementDown = false;
 	bool movementLeft = false;
@@ -84,7 +75,7 @@ void Player::movement(float& deltaTime) {
 
 	// Animation play
 	if (isMoving) {
-		float animationSpeed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? 1.5f : 2.0f;
+		float animationSpeed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? .15f : .25f;
 		sf::Texture& target_texture = (currentDirection == "up" || currentDirection == "down") ? texture_walk_vertical : texture_walk_horizontal;
 
 		if (currentDirection == "up") {

@@ -13,18 +13,19 @@ const int RUN_SPEED = 6.0f;
 class Player {
 	public:
 		Player();
-		void render(sf::RenderWindow& window, float& deltaTime, sf::View& gameView);
-		void movement(float& deltaTime);
+		void render(sf::RenderWindow& window, float deltaTime, sf::View& gameView);
+		void movement(float deltaTime);
 
 	private:
-		Animations animations;
-
+		// Player sprite
 		sf::Sprite sprite;
 		sf::Texture texture_walk_vertical;
 		sf::Texture texture_walk_horizontal;
 		sf::Texture texture_idle;
 		sf::View view;
 
+		// Animations
+		Animations animations;
 		std::string direction;
 		sf::Vector2i animWalk_UP = { 0,16 };
 		sf::Vector2i animWalk_DOWN = { 0,0 };

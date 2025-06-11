@@ -5,10 +5,7 @@ Tilemap::Tilemap() {
 }
 
 void Tilemap::initilize() {
-	if (!grass_texture.loadFromFile("../../../assets/Textures/World/grass.png")) {
-		std::cout << "Error: grass.png not loaded." << std::endl;
-		return;
-	}
+	if (!grass_texture.loadFromFile("../../../assets/Textures/World/grass.png")) return;
 
 	grass_sprite.setTexture(grass_texture);
 	grass_sprite.setScale(4, 4);

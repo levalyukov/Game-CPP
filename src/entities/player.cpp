@@ -1,17 +1,5 @@
 #include "player.h"
 
-std::string currentDirection = "down";
-
-int currentFrame = 0;
-float animationTimer = 0.0f;
-
-sf::Vector2i walk_UP;
-sf::Vector2i walk_DOWN;
-sf::Vector2i walk_LEFT;
-sf::Vector2i walk_RIGHT;
-
-static std::string oldDirection = "";
-
 Player::Player() {
 	if (!texture_idle.loadFromFile("../../../assets/Textures/character_idle.png")) return;
 	if (!texture_walk_horizontal.loadFromFile("../../../assets/Textures/character_walk_horizontal.png")) return;
@@ -58,10 +46,11 @@ void Player::movement(float deltaTime) {
 		currentFrame = 0;
 		animationTimer = 0.0f;
 		currentDirection = newDirection;
-		walk_UP = animWalk_UP;
-		walk_DOWN = animWalk_DOWN;
-		walk_LEFT = animWalk_LEFT;
-		walk_RIGHT = animWalk_RIGHT;
+
+		oldVectorUP	= vectorUP;
+		oldVectorDOWN = vectorDOWN;
+		oldVectorLEFT = vectorLEFT;
+		oldVectorRIGHT = vectorRIGHT;
 	}
 
 	// Movement
@@ -82,7 +71,7 @@ void Player::movement(float deltaTime) {
 			animations.UpdateAnimation(
 				sprite,
 				target_texture,
-				walk_UP,
+				oldVectorUP,
 				2, 16, 16,
 				animationTimer,
 				animationSpeed,
@@ -94,7 +83,7 @@ void Player::movement(float deltaTime) {
 			animations.UpdateAnimation(
 				sprite,
 				target_texture,
-				walk_DOWN,
+				oldVectorDOWN,
 				2, 16, 16,
 				animationTimer,
 				animationSpeed,
@@ -106,7 +95,7 @@ void Player::movement(float deltaTime) {
 			animations.UpdateAnimation(
 				sprite,
 				target_texture,
-				walk_LEFT,
+				oldVectorLEFT,
 				2, 16, 16,
 				animationTimer,
 				animationSpeed,
@@ -118,7 +107,7 @@ void Player::movement(float deltaTime) {
 			animations.UpdateAnimation(
 				sprite,
 				target_texture,
-				walk_RIGHT,
+				oldVectorRIGHT,
 				2, 16, 16,
 				animationTimer,
 				animationSpeed,
@@ -130,19 +119,19 @@ void Player::movement(float deltaTime) {
 		sprite.setTexture(texture_idle);
 		if (currentDirection == "up") {
 			sprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
-			walk_UP = animWalk_UP;
+			oldVectorUP = vectorUP;
 		}
 		if (currentDirection == "down") {
 			sprite.setTextureRect(sf::IntRect(16, 0, 16, 16));
-			walk_DOWN = animWalk_DOWN;
+			oldVectorDOWN = vectorDOWN;
 		}
 		if (currentDirection == "left") {
 			sprite.setTextureRect(sf::IntRect(0, 16, 16, 16));
-			walk_LEFT = animWalk_LEFT;
+			oldVectorLEFT = vectorLEFT;
 		}
 		if (currentDirection == "right") {
 			sprite.setTextureRect(sf::IntRect(16, 16, 16, 16));
-			walk_RIGHT = animWalk_RIGHT;
+			oldVectorRIGHT = vectorRIGHT;
 		}
 	}
 }

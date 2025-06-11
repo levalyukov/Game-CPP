@@ -5,7 +5,7 @@ UI::UI() {
 }
 
 void UI::render(sf::RenderWindow& window, sf::View& uiView) {
-	window.draw(test_text);
+	window.draw(coins);
 	ui = uiView;
 }
 
@@ -18,7 +18,7 @@ void UI::initilize(sf::Font& font) {
 	createHUD();
 }
 
-void UI::setTextPosition(Alignment alignment, sf::Text& ui_label, float offsetX, float offsetY)  {
+void UI::setElementPosition(Alignment alignment, sf::Text& ui_label, float offsetX, float offsetY)  {
 	sf::FloatRect bounds = ui_label.getLocalBounds();
 	sf::Vector2f viewSize = ui.getSize();
 
@@ -30,9 +30,9 @@ void UI::setTextPosition(Alignment alignment, sf::Text& ui_label, float offsetX,
 }
 
 void UI::createHUD() {
-	test_text.setString("UI Text");
-	test_text.setCharacterSize(36);
-	test_text.setFont(font);
-	test_text.setPosition(10.f, 10.f);
-	setTextPosition(TopLeft, test_text, 10.0f, 10.0f);
+	coins.setString("Coins: " + std::to_string(10));
+	coins.setCharacterSize(36);
+	coins.setFont(font);
+	coins.setPosition(10.f, 10.f);
+	setElementPosition(TopLeft, coins, 10.0f, 10.0f);
 }

@@ -26,9 +26,21 @@ class Player {
 
 		// Animations
 		Animations animations;
+
 		std::string direction;
-		sf::Vector2i animWalk_UP = { 0,16 };
-		sf::Vector2i animWalk_DOWN = { 0,0 };
-		sf::Vector2i animWalk_LEFT = { 0,0 };
-		sf::Vector2i animWalk_RIGHT = { 0,16 };
+		std::string currentDirection;
+		std::string oldDirection;
+
+		int currentFrame = 0;
+		float animationTimer = 0.0f;
+
+		sf::Vector2i vectorUP = { 0,16 };
+		sf::Vector2i vectorDOWN = { 0,0 };
+		sf::Vector2i vectorLEFT = { 0,0 };
+		sf::Vector2i vectorRIGHT = { 0,16 };
+
+		sf::Vector2i oldVectorUP;
+		sf::Vector2i oldVectorDOWN;
+		sf::Vector2i oldVectorLEFT;
+		sf::Vector2i oldVectorRIGHT;
 };

@@ -3,6 +3,7 @@
 Game::Game() {
 	window.create(sf::VideoMode({ WINDOW_WIDTH, WINDOW_HEGHT }), WINDOW_TITLE);
 	window.setFramerateLimit(60);
+	initilizeIcon();
 
 	gameView = window.getDefaultView();
 	uiView = window.getDefaultView();
@@ -29,10 +30,16 @@ void Game::render() {
 	// Game
 	window.setView(gameView);
 	tilemap.render(window);
-	player.render(window, deltaTime, gameView);
+	player.render(window, gameView);
 
 	window.setView(uiView);
 	ui.render(window, uiView);
 
 	window.display();
+}
+
+void Game::initilizeIcon() {
+	if (!icon.loadFromFile("../../../assets/icon.png")) return;
+	pixelData = icon.getPixelsPtr();
+	window.setIcon(icon.getSize().x, icon.getSize().y, pixelData);
 }

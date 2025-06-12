@@ -11,7 +11,7 @@ class Tilemap {
 		void render(sf::RenderWindow& window);
 
 	private:
-		const int TILE_SIZE = 16 * 4;
+		const int TILE_SIZE = 64;
 		const int WIDHT_MAX = 32;
 		const int HEIGH_MAX = 32;
 

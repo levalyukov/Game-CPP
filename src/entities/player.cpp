@@ -7,6 +7,7 @@ Player::Player() {
 
 	sprite.setTexture(texture_idle);
 	sprite.setTextureRect(sf::IntRect(16, 0, 16, 16));
+	sprite.setPosition((9 / 2) * 64, (9 / 2) * 64);
 	sprite.setScale(4, 4);
 	view.setSize({ 1280,720 });
 }

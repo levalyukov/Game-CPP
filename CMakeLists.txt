@@ -17,7 +17,7 @@ add_executable(Game "src/main.cpp"
 "src/economy/economy.cpp"
 )
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
-target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-graphics)
+target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-audio sfml-graphics)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(SFML_DLL_SUFFIX "-d-2.dll")
@@ -30,5 +30,6 @@ add_custom_command(TARGET Game POST_BUILD
         "${SFML_ROOT}/bin/sfml-system${SFML_DLL_SUFFIX}"
         "${SFML_ROOT}/bin/sfml-window${SFML_DLL_SUFFIX}"
         "${SFML_ROOT}/bin/sfml-graphics${SFML_DLL_SUFFIX}"
+        "${SFML_ROOT}/bin/sfml-audio${SFML_DLL_SUFFIX}"
         "$<TARGET_FILE_DIR:Game>"
 )

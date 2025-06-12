@@ -12,8 +12,16 @@ void Animations::UpdateAnimation(
     float deltaTime
 ) {
     timer += deltaTime;
+
+    sprite.setTexture(texture);
+    sprite.setTextureRect(
+        sf::IntRect(
+            animStart.x, animStart.y,
+            frameX, frameY
+        )
+    );
+
     if (timer >= frameDuration) {
-        sprite.setTexture(texture);
         timer = 0;
 
         animStart.x += frameX;

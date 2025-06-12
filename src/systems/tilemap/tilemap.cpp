@@ -12,8 +12,8 @@ void Tilemap::initilize() {
 }
 
 void Tilemap::render(sf::RenderWindow& window) {
-	for (int x = 0; x < WIDHT_MAX; x++) {
-		for (int y = 0; y < HEIGH_MAX; y++) {
+	for (int x = 0; x < 9; x++) {
+		for (int y = 0; y < 9; y++) {
 			grass_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
 			window.draw(grass_sprite);
 		}

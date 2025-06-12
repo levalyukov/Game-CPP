@@ -69,7 +69,7 @@ void Player::movement(float deltaTime) {
 		sf::Texture& target_texture = (currentDirection == "up" || currentDirection == "down") ? texture_walk_vertical : texture_walk_horizontal;
 
 		if (currentDirection == "up") {
-			animations.UpdateAnimation(
+			animations.setAnimation(
 				sprite,
 				target_texture,
 				oldVectorUP,
@@ -81,7 +81,7 @@ void Player::movement(float deltaTime) {
 		}
 
 		if (currentDirection == "down") {
-			animations.UpdateAnimation(
+			animations.setAnimation(
 				sprite,
 				target_texture,
 				oldVectorDOWN,
@@ -93,7 +93,7 @@ void Player::movement(float deltaTime) {
 		}
 
 		if (currentDirection == "left") {
-			animations.UpdateAnimation(
+			animations.setAnimation(
 				sprite,
 				target_texture,
 				oldVectorLEFT,
@@ -105,7 +105,7 @@ void Player::movement(float deltaTime) {
 		}
 
 		if (currentDirection == "right") {
-			animations.UpdateAnimation(
+			animations.setAnimation(
 				sprite,
 				target_texture,
 				oldVectorRIGHT,

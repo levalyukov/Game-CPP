@@ -13,6 +13,8 @@ add_executable(Game "src/main.cpp"
 "src/systems/animations/animations.cpp"
 "src/systems/ui/ui.cpp"
 "src/systems/ui/ui.h"
+"src/economy/economy.h" 
+"src/economy/economy.cpp"
 )
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-graphics)

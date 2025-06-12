@@ -5,15 +5,15 @@ UI::UI() {
 }
 
 void UI::render(sf::RenderWindow& window, sf::View& uiView) {
+	coins.setString("Coins: " + std::to_string(economy.money));
+
 	window.draw(coins);
+
 	ui = uiView;
 }
 
 void UI::initilize(sf::Font& font) {
-	if (!font.loadFromFile("../../../assets/fonts/arial.ttf")) {
-		std::cout << "Error: 'arial.ttf' not loaded." << std::endl;
-		return;
-	}
+	if (!font.loadFromFile("../../../assets/fonts/arial.ttf")) return;
 
 	createHUD();
 }
@@ -30,8 +30,7 @@ void UI::setElementPosition(Alignment alignment, sf::Text& ui_label, float offse
 }
 
 void UI::createHUD() {
-	coins.setString("Coins: " + std::to_string(10));
-	coins.setCharacterSize(36);
+	coins.setCharacterSize(26);
 	coins.setFont(font);
 	coins.setPosition(10.f, 10.f);
 	setElementPosition(TopLeft, coins, 10.0f, 10.0f);

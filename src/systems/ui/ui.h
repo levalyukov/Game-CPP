@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Font.hpp>
 
+#include "../../economy/economy.h"
 #include "../../entities/player.h"
 
 class UI {
@@ -20,12 +21,10 @@ class UI {
 		sf::Text coins;
 
 		Player player;
+		Economy economy;
 
 		enum Alignment {
-			TopLeft,
-			TopRight,
-			BottomLeft,
-			BottomRight
+			TopLeft
 		};
 
 		void initilize(sf::Font& font);

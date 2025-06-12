@@ -6,10 +6,10 @@
 #include <SFML/Graphics/Color.hpp>
 class Animations {
 	public:
-		void UpdateAnimation(
+		void setAnimation(
 			sf::Sprite& sprite,
-			sf::Texture& textureSet,
-			sf::Vector2i& startPosition,
+			sf::Texture& texture,
+			sf::Vector2i& animStart,
 			int frameCount,
 			int frameX,
 			int frameY,

@@ -1,6 +1,6 @@
 #include "animations.h"
 
-void Animations::UpdateAnimation(
+void Animations::setAnimation(
     sf::Sprite& sprite,
     sf::Texture& texture,
     sf::Vector2i& animStart,

@@ -15,6 +15,11 @@ add_executable(Game "src/main.cpp"
 "src/systems/ui/ui.h"
 "src/economy/economy.h" 
 "src/economy/economy.cpp"
+"src/entities/entity-manager.h" 
+"src/entities/entity-manager.cpp" 
+"src/entities/entity.h" 
+"src/systems/collisions/collisions.h" 
+"src/systems/collisions/collisions.cpp"
 )
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-audio sfml-graphics)

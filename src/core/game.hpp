@@ -5,10 +5,10 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Color.hpp>
 
-#include "../entities/player.h"
-#include "../entities/entity-manager.h"
-#include "../systems/tilemap/tilemap.h"
-#include "../systems/ui/ui.h"
+#include "../entities/player.hpp"
+#include "../entities/entity-manager.hpp"
+#include "../systems/tilemap/tilemap.hpp"
+#include "../systems/ui/ui.hpp"
 
 const std::string WINDOW_TITLE = "Delicious Soup";
 const int WINDOW_WIDTH = 1280;

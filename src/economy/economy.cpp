@@ -1,4 +1,4 @@
-#include "economy.h";
+#include "economy.hpp";
 
 void Economy::setMoney(int value) {
 	if (value < 0) {

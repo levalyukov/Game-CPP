@@ -12,16 +12,17 @@ add_executable(Game "src/main.cpp"
 "src/systems/tilemap/tilemap.cpp" 
 "src/systems/animations/animations.cpp"
 "src/systems/ui/ui.cpp"
-"src/systems/ui/ui.h"
-"src/economy/economy.h" 
+"src/systems/ui/ui.hpp"
+"src/economy/economy.hpp" 
 "src/economy/economy.cpp"
-"src/entities/entity-manager.h" 
+"src/entities/entity-manager.hpp" 
 "src/entities/entity-manager.cpp" 
-"src/entities/entity.h" 
+"src/entities/entity.hpp" 
 "src/entities/entity.cpp" 
-"src/systems/collisions/collisions.h" 
+"src/systems/collisions/collisions.hpp" 
 "src/systems/collisions/collisions.cpp"
-)
+"src/systems/audio/audio.cpp" 
+"src/systems/audio/audio.hpp")
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-audio sfml-graphics)
 

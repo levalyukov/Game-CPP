@@ -1,4 +1,4 @@
-#include "animations.h"
+#include "animations.hpp"
 
 void Animations::setAnimation(
     sf::Sprite& sprite,

@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 
-#include "../systems/animations/animations.h"
+#include "../systems/animations/animations.hpp"
 
 const float WALK_SPEED = 4.0f;
 const int RUN_SPEED = 6.0f;

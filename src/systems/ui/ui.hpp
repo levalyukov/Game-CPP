@@ -4,8 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Font.hpp>
 
-#include "../../economy/economy.h"
-#include "../../entities/player.h"
+#include "../../economy/economy.hpp"
+#include "../../entities/player.hpp"
 
 class UI {
 	public:

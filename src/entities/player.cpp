@@ -1,4 +1,4 @@
-#include "player.h"
+#include "player.hpp"
 
 Player::Player() {
 	if (!texture_idle.loadFromFile("../../../assets/textures/entity/player/character_idle.png")) return;

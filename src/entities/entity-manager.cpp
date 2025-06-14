@@ -1,5 +1,5 @@
-#include "entity-manager.h"
-#include "entity.h"
+#include "entity-manager.hpp"
+#include "entity.hpp"
 
 EntityManager::EntityManager() {
 	if (!cafeTexture.loadFromFile("../../../assets/textures/location/decor/kitchen.png")) return;

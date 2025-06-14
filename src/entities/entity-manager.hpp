@@ -1,6 +1,6 @@
 #pragma once
 
-#include "entity.h"
+#include "entity.hpp"
 
 #include <map>
 #include <iostream>

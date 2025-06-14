@@ -1,4 +1,4 @@
-#include "game.h";
+#include "game.hpp";
 
 Game::Game() {
 	window.create(sf::VideoMode({ WINDOW_WIDTH, WINDOW_HEGHT }), WINDOW_TITLE);

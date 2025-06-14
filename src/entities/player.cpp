@@ -1,13 +1,13 @@
 #include "player.h"
 
 Player::Player() {
-	if (!texture_idle.loadFromFile("../../../assets/Textures/character_idle.png")) return;
-	if (!texture_walk_horizontal.loadFromFile("../../../assets/Textures/character_walk_horizontal.png")) return;
-	if (!texture_walk_vertical.loadFromFile("../../../assets/Textures/character_walk_vertical.png")) return;
+	if (!texture_idle.loadFromFile("../../../assets/textures/entity/player/character_idle.png")) return;
+	if (!texture_walk_horizontal.loadFromFile("../../../assets/textures/entity/player/character_walk_horizontal.png")) return;
+	if (!texture_walk_vertical.loadFromFile("../../../assets/textures/entity/player/character_walk_vertical.png")) return;
 
 	sprite.setTexture(texture_idle);
 	sprite.setTextureRect(sf::IntRect(16, 0, 16, 16));
-	sprite.setPosition((9 / 2) * 64, (9 / 2) * 64);
+	sprite.setPosition((9 / 2) * 64, 64*6);
 	sprite.setScale(4, 4);
 	view.setSize({ 1280,720 });
 }

@@ -6,6 +6,7 @@
 #include <SFML/Graphics/Color.hpp>
 
 #include "../entities/player.h"
+#include "../entities/entity-manager.h"
 #include "../systems/tilemap/tilemap.h"
 #include "../systems/ui/ui.h"
 
@@ -34,9 +35,10 @@ class Game {
 		sf::Image icon;
 		const sf::Uint8* pixelData;
 
+		UI ui;
 		Player player;
 		Tilemap tilemap;
-		UI ui;
+		EntityManager entityManager;
 
 		float rawDelta = clock.restart().asSeconds();
 		float deltaTime = std::min(rawDelta, 0.1f);

@@ -31,6 +31,7 @@ void Game::render() {
 	window.setView(gameView);
 	tilemap.render(window);
 	player.render(window, deltaTime, gameView);
+	entityManager.render(window);
 
 	window.setView(uiView);
 	ui.render(window, uiView);

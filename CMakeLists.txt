@@ -18,6 +18,7 @@ add_executable(Game "src/main.cpp"
 "src/entities/entity-manager.h" 
 "src/entities/entity-manager.cpp" 
 "src/entities/entity.h" 
+"src/entities/entity.cpp" 
 "src/systems/collisions/collisions.h" 
 "src/systems/collisions/collisions.cpp"
 )

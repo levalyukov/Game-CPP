@@ -11,7 +11,7 @@ class Label : public UIElement {
 	public:
 		Label(
 			std::string message,
-			sf::Font& font,
+			sf::Font* font,
 			unsigned int size,
 			sf::Color color,
 			sf::Vector2f position

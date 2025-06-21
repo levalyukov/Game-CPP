@@ -27,10 +27,10 @@ void Tilemap::render(sf::RenderWindow& window) {
 			else if (x % 9 == 8) water_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
 			else if (y % 9 == 8) water_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
 
-			else if (x % 9 == 2 && y >= 2 && y <= 6) rock_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
-			else if (x % 9 == 6 && y >= 2 && y <= 6) rock_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
-			else if (y % 9 == 2 && x >= 2 && x <= 6) rock_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
-			else if (y % 9 == 6 && x >= 2 && x <= 6) rock_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
+			else if (x % 9 == 1 && y >= 1 && y <= 7) rock_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
+			else if (x % 9 == 7 && y >= 1 && y <= 7) rock_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
+			else if (y % 9 == 1 && x >= 1 && x <= 7) rock_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
+			else if (y % 9 == 7 && x >= 1 && x <= 7) rock_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
 
 			else grass_sprite.setPosition(x * TILE_SIZE, y * TILE_SIZE);
 

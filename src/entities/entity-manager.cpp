@@ -2,14 +2,14 @@
 #include "entity.hpp"
 
 EntityManager::EntityManager() {
-	if (!cafeTexture.loadFromFile("../../../assets/textures/location/decor/kitchen.png")) return;
-	cafeSprite.setTexture(cafeTexture);
-	cafeSprite.setScale(4, 4);
+	if (!cashDeskTexture.loadFromFile("../../../assets/textures/location/decor/test_obj.png")) return;
+	cashDeskSprite.setTexture(cashDeskTexture);
+	cashDeskSprite.setScale(4, 4);
 
 	addEntity(
-		"cafe",
-		cafeSprite,
-		{ 128,128 },
+		"test_obj",
+		cashDeskSprite,
+		{ 64 * 2, 64 },
 		false
 	);
 }
@@ -33,8 +33,8 @@ void EntityManager::addEntity(
 }
 
 Entity* EntityManager::getEntity(int id) {
-	auto it = entities.find(id);
-	return (it != entities.end()) ? &it->second : nullptr;
+	auto entity = entities.find(id);
+	return (entity != entities.end()) ? &entity->second : nullptr;
 }
 
 void EntityManager::removeEntity(int id) {

@@ -26,7 +26,7 @@ class EntityManager {
 		void render(sf::RenderWindow& window);
 
 	private:
-		sf::Sprite cafeSprite;
-		sf::Texture cafeTexture;
+		sf::Sprite cashDeskSprite;
+		sf::Texture cashDeskTexture;
 		
 };

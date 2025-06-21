@@ -34,7 +34,7 @@ void Game::render() {
 	entityManager.render(window);
 
 	window.setView(uiView);
-	ui.render(window, uiView);
+	ui.render(window);
 
 	window.display();
 }

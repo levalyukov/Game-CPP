@@ -8,7 +8,8 @@
 #include "../entities/player.hpp"
 #include "../entities/entity-manager.hpp"
 #include "../systems/tilemap/tilemap.hpp"
-#include "../systems/ui/ui.hpp"
+
+#include "../ui/ui.hpp"
 
 const std::string WINDOW_TITLE = "Delicious Soup";
 const int WINDOW_WIDTH = 1280;

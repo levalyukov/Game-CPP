@@ -38,12 +38,7 @@ Entity* EntityManager::getEntity(int id) {
 }
 
 void EntityManager::removeEntity(int id) {
-	if (entities.find(id) == entities.end()) {
-		std::cerr << "Error: entity with the ID was not found." << std::endl;
-		return;
-	}
-
-	entities.erase(id);
+	if (entities.find(id) != entities.end()) entities.erase(id);
 }
 
 void EntityManager::render(sf::RenderWindow& window) {

@@ -26,9 +26,11 @@ add_executable(Game "src/main.cpp"
 "src/ui/gui/gui.hpp"
 "src/ui/gui/elements/button.cpp"
 "src/ui/gui/elements/button.hpp"
-"src/ui/gui/elements/text.cpp"
-"src/ui/gui/elements/text.hpp"
- "src/ui/ui.cpp")
+"src/ui/gui/elements/label.cpp"
+"src/ui/gui/elements/label.hpp"
+"src/ui/ui.cpp"
+"src/ui/ui.hpp"
+)
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-audio sfml-graphics)
 

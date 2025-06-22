@@ -33,8 +33,9 @@ void Game::render() {
 	player.render(window, deltaTime, gameView);
 	entityManager.render(window);
 
+	// User Interface
 	window.setView(uiView);
-	ui.render(window);
+	uiManager.render(window);
 
 	window.display();
 }

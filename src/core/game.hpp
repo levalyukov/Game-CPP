@@ -1,15 +1,16 @@
 #pragma once
 
-#include <iostream>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/Graphics/Color.hpp>
-
 #include "../entities/player.hpp"
 #include "../entities/entity-manager.hpp"
 #include "../systems/tilemap/tilemap.hpp"
 
 #include "../ui/core/ui.hpp"
+#include "../ui/screens/hud.hpp"
+
+#include <iostream>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
 
 const std::string WINDOW_TITLE = "Delicious Soup";
 const int WINDOW_WIDTH = 1280;
@@ -36,7 +37,8 @@ class Game {
 		sf::Image icon;
 		const sf::Uint8* pixelData;
 
-		UI ui;
+		UI uiManager;
+		HUD hud{ uiManager };
 		Player player;
 		Tilemap tilemap;
 		EntityManager entityManager;

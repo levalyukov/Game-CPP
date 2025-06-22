@@ -9,10 +9,8 @@
 
 class EntityManager {
 	public:
-		std::map <int, Entity> entities;
+		std::map <int, std::unique_ptr<Entity>> entities;
 		int nextID = 0;
-
-		EntityManager();
 
 		void addEntity(
 			std::string name, 

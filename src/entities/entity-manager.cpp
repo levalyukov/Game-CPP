@@ -1,40 +1,14 @@
 #include "entity-manager.hpp"
 #include "entity.hpp"
 
-EntityManager::EntityManager() {
-	if (!cashDeskTexture.loadFromFile("../../../assets/textures/location/decor/test_obj.png")) return;
-	cashDeskSprite.setTexture(cashDeskTexture);
-	cashDeskSprite.setScale(4, 4);
-
-	addEntity(
-		"test_obj",
-		cashDeskSprite,
-		{ 64 * 2, 64 },
-		false
-	);
-}
-
-void EntityManager::addEntity(
-	std::string name,
-	sf::Sprite& sprite,
-	sf::Vector2f position,
-	bool hasCollision
-) {
+void EntityManager::addEntity(std::string name, sf::Sprite& sprite, sf::Vector2f position, bool hasCollision) {
 	int id = nextID++;
-	entities.emplace(
-		id, 
-		Entity(
-			name, 
-			sprite, 
-			position, 
-			hasCollision
-		)
-	);
+	entities.emplace(id, std::move(std::make_unique<Entity>(name, sprite, position, hasCollision)));
 }
 
 Entity* EntityManager::getEntity(int id) {
 	auto entity = entities.find(id);
-	return (entity != entities.end()) ? &entity->second : nullptr;
+	return (entity != entities.end()) ? entity->second.get() : nullptr;
 }
 
 void EntityManager::removeEntity(int id) {
@@ -44,8 +18,7 @@ void EntityManager::removeEntity(int id) {
 void EntityManager::render(sf::RenderWindow& window) {
 	if (entities.empty()) return;
 
-	for (const auto& object : entities) {
-		const Entity& entity = object.second;
-		window.draw(entity.getSprite());
+	for (auto& object : entities) {
+		window.draw(object.second->getSprite());
 	}
 }

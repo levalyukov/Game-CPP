@@ -9,7 +9,7 @@
 #include "../entities/entity-manager.hpp"
 #include "../systems/tilemap/tilemap.hpp"
 
-#include "../ui/ui.hpp"
+#include "../ui/core/ui.hpp"
 
 const std::string WINDOW_TITLE = "Delicious Soup";
 const int WINDOW_WIDTH = 1280;

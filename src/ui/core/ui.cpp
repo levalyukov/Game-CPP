@@ -1,21 +1,20 @@
 #include "ui.hpp"
 
-UI::UI() {
-	addFont("nunito", "../../../assets/fonts/nunito.ttf");
-	addElement(
-		gui.createLabel(
-			"label_123",
-			"Game Menu",
-			getFont("nunito"),
-			36,
-			sf::Color::White,
-			{25, 25}
-		)
-	);
+// Manipulating objects
+void UI::addElement(std::string name_element, std::unique_ptr<UIElement> element) {
+	ui_elements.emplace(name_element, std::move(element));
 }
 
-void UI::addElement(std::unique_ptr<UIElement> element) {
-	ui_elements.push_back(std::move(element));
+UIElement* UI::getElement(std::string name_element) {
+	auto element = ui_elements.find(name_element);
+	return (element != ui_elements.end()) ? element->second.get() : nullptr;
+}
+
+void UI::removeElement(std::string name_element) {
+	auto element = ui_elements.find(name_element);
+	if (element != ui_elements.end()) {
+		ui_elements.erase(name_element);
+	}
 }
 
 // Fonts
@@ -34,8 +33,9 @@ void UI::removeFont(std::string font_name) {
 	if (fonts.find(font_name) != fonts.end()) fonts.erase(font_name);
 }
 
+
 void UI::render(sf::RenderWindow& window) {
 	for (const auto& element : ui_elements) {
-		element->draw(window);
+		element.second->draw(window);
 	}
 }

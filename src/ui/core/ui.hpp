@@ -7,14 +7,14 @@
 #include <vector>
 
 class UI {
-	std::map<std::string, std::unique_ptr<sf::Font>> fonts;
-	std::vector<std::unique_ptr<UIElement>> ui_elements;
-
 	public:
-		UI();
+		std::map<std::string, std::unique_ptr<sf::Font>> fonts;
+		std::map<std::string, std::unique_ptr<UIElement>> ui_elements;
+
 		// Elements
-		void addElement(std::unique_ptr<UIElement> element);
-		//	std::unique_ptr<UIElement> getElement(std::string name_element);
+		void addElement(std::string name_element, std::unique_ptr<UIElement> element);
+		UIElement* getElement(std::string name_element);
+		void removeElement(std::string name_element);
 		
 		// Fonts
 		void addFont(std::string font_name, std::string path);

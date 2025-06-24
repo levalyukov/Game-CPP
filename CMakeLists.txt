@@ -30,7 +30,7 @@ add_executable(Game "src/main.cpp"
 "src/ui/core/elements/label.hpp"
 "src/ui/screens/hud.cpp"
 "src/ui/screens/hud.hpp"
-)
+ "src/ui/screens/pause.cpp" "src/ui/core/elements/panel.cpp")
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-audio sfml-graphics)
 

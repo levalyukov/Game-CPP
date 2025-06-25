@@ -2,8 +2,15 @@
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Window/Keyboard.hpp>
 
 class UIElement {
 	public:
+		enum ElementPosition {
+			TopLeft, TopCenter, TopRight,
+			MiddleLeft, MiddleCenter, MiddleRight,
+			BottomLeft, BottomCenter, BottomRight
+		};
+
 		virtual void draw(sf::RenderWindow& window) const = 0;
 };

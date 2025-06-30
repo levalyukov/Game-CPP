@@ -12,7 +12,7 @@ class Entity {
 			sf::Vector2f position, 
 			bool hasCollision
 		);
-		sf::Sprite getSprite() const;
+		sf::Sprite getSprite();
 
 	private:
 		std::string m_name;

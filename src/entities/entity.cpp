@@ -12,5 +12,5 @@ Entity::Entity(
 	m_sprite.setPosition(m_position);
 }
 
-sf::Sprite Entity::getSprite() const { return m_sprite; }
+sf::Sprite Entity::getSprite() { return m_sprite; }
 

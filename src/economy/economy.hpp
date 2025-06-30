@@ -5,12 +5,9 @@
 
 class Economy {
 	public:
-		int money = 0;
+		unsigned int money = 0;
 
 		void setMoney(int value);
 		void addMoney(int value);
 		void removeMoney(int value);
-
-	private: 
-		
 };

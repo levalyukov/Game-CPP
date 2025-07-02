@@ -6,8 +6,7 @@ std::unique_ptr<Label> GUI::createLabel(
 	unsigned __int8 size,
 	sf::Color color,
 	sf::Vector2f coords_pos,
-	UIElement::ElementPosition position,
-	bool visible
+	UIElement::ElementPosition position
 ) {
-	return std::make_unique<Label>(message, font, size, color, coords_pos, position, visible);
+	return std::make_unique<Label>(message, font, size, color, coords_pos, position);
 }

@@ -6,15 +6,13 @@ Label::Label(
 	unsigned __int8 size,
 	sf::Color color,
 	sf::Vector2f coords_position,
-	ElementPosition position,
-	bool visible
+	ElementPosition position
 ) : message(message),
 	font(*font),
 	size(size),
 	color(color),
 	coords_pos(coords_position),
-	position(position),
-	isVisible(visible) {
+	position(position) {
 
 	text.setFont(*font);
 	text.setCharacterSize(size);

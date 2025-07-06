@@ -6,31 +6,48 @@ set(SFML_DIR "${SFML_ROOT}/lib/cmake/SFML")
 
 find_package(SFML COMPONENTS system window graphics REQUIRED)
 
-add_executable(Game "src/main.cpp" 
+add_executable(Game 
+"src/main.cpp" 
 "src/core/game.cpp" 
+
 "src/entities/player.cpp" 
-"src/systems/tilemap/tilemap.cpp" 
-"src/systems/animations/animations.cpp"
 "src/economy/economy.hpp" 
 "src/economy/economy.cpp"
 "src/entities/entity-manager.hpp" 
 "src/entities/entity-manager.cpp" 
 "src/entities/entity.hpp" 
 "src/entities/entity.cpp" 
-"src/systems/collisions/collisions.hpp" 
-"src/systems/collisions/collisions.cpp"
-"src/systems/audio/audio.cpp" 
-"src/systems/audio/audio.hpp" 
+
+"src/core/tilemap/tilemap.cpp" 
+"src/core/tilemap/tilemap.hpp" 
+"src/core/animations/animations.cpp"
+"src/core/animations/animations.hpp"
+"src/core/collisions/collisions.hpp" 
+"src/core/collisions/collisions.cpp"
+"src/core/audio/audio.cpp" 
+"src/core/audio/audio.hpp" 
+
 "src/ui/core/ui.cpp"
 "src/ui/core/ui.hpp"
 "src/ui/core/gui.cpp"
 "src/ui/core/gui.hpp"
+
 "src/ui/core/elements/ui-element.hpp"
 "src/ui/core/elements/label.cpp"
 "src/ui/core/elements/label.hpp"
+"src/ui/core/elements/button.cpp" 
+"src/ui/core/elements/button.hpp" 
+"src/ui/core/elements/panel.cpp"
+"src/ui/core/elements/panel.hpp"
+
 "src/ui/screens/hud.cpp"
 "src/ui/screens/hud.hpp"
- "src/ui/screens/pause.cpp" "src/ui/core/elements/panel.cpp")
+"src/ui/screens/pause.cpp" 
+"src/ui/screens/pause.hpp" 
+
+"src/core/debug/debug.cpp"
+"src/core/debug/debug.hpp"
+)
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-audio sfml-graphics)
 

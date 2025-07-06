@@ -34,8 +34,9 @@ void UI::removeFont(std::string font_name) {
 }
 
 
-void UI::render(sf::RenderWindow& window) {
+void UI::render(sf::Event& event, sf::RenderWindow& window) {
 	for (const auto& element : ui_elements) {
+		element.second->handleEvent(event, window);
 		element.second->draw(window);
 	}
 }

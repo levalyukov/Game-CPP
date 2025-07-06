@@ -1,7 +1,7 @@
 #pragma once
 
 #include "elements/label.hpp"
-#include "elements/panel.hpp"
+#include "elements/button.hpp"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -17,5 +17,10 @@ class GUI {
 			sf::Color font_color,
 			sf::Vector2f coords_pos,
 			UIElement::ElementPosition position
+		);
+
+		std::unique_ptr<Button> createButton(
+			sf::Texture* texture,
+			sf::Vector2f coords_pos
 		);
 };

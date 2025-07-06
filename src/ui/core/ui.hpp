@@ -21,7 +21,7 @@ class UI {
 		sf::Font* getFont(std::string font_name);
 		void UI::removeFont(std::string font_name);
 
-		void render(sf::RenderWindow& window);
+		void render(sf::Event& event, sf::RenderWindow& window);
 
 		GUI gui;
 };

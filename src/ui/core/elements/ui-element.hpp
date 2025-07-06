@@ -12,5 +12,6 @@ class UIElement {
 			BottomLeft, BottomCenter, BottomRight
 		};
 
+		virtual void handleEvent(sf::Event& event, sf::RenderWindow& window) = 0;
 		virtual void draw(sf::RenderWindow& window) const = 0;
 };

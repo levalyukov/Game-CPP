@@ -35,7 +35,7 @@ void Game::render() {
 
 	// User Interface
 	window.setView(uiView);
-	uiManager.render(window);
+	uiManager.render(event, window);
 
 	window.display();
 }

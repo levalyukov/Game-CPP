@@ -1,4 +1,4 @@
-#include "Tilemap.hpp"
+#include "tilemap.hpp"
 
 Tilemap::Tilemap() {
 	initilize();

@@ -2,10 +2,14 @@
 
 #include "../entities/player.hpp"
 #include "../entities/entity-manager.hpp"
-#include "../systems/tilemap/tilemap.hpp"
+
+#include "../economy/economy.hpp"
 
 #include "../ui/core/ui.hpp"
 #include "../ui/screens/hud.hpp"
+
+#include "tilemap/tilemap.hpp"
+#include "debug/debug.hpp"
 
 #include <iostream>
 #include <SFML/Window.hpp>
@@ -38,7 +42,8 @@ class Game {
 		const sf::Uint8* pixelData;
 
 		UI uiManager;
-		HUD hud{ uiManager };
+		Economy economyManager;
+		HUD hud{ uiManager, economyManager };
 		Player player;
 		Tilemap tilemap;
 		EntityManager entityManager;

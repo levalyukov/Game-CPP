@@ -43,7 +43,7 @@ class Game {
 
 		UI uiManager;
 		Economy economyManager;
-		HUD hud{ uiManager, economyManager };
+		HUD hud{ uiManager };
 		Player player;
 		Tilemap tilemap;
 		EntityManager entityManager;

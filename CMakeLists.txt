@@ -47,6 +47,9 @@ add_executable(Game
 
 "src/core/debug/debug.cpp"
 "src/core/debug/debug.hpp"
+
+"src/core/resources/resources.hpp"
+"src/core/resources/resources.cpp"
 )
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-audio sfml-graphics)

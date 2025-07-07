@@ -7,9 +7,6 @@
 
 #include "../core/animations/animations.hpp"
 
-const float WALK_SPEED = 4.0f;
-const int RUN_SPEED = 6.0f;
-
 class Player {
 	public:
 		Player();
@@ -30,6 +27,12 @@ class Player {
 		std::string direction;
 		std::string currentDirection;
 		std::string oldDirection;
+
+		const float RUN_SPEED = 6.0f;
+		const float WALK_SPEED = 4.0f;
+
+		const float RUN_ANIM = 0.10f;
+		const float WALK_ANIM = 0.15f;
 
 		int currentFrame = 0;
 		float animationTimer = 0.0f;

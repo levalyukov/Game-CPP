@@ -65,7 +65,7 @@ void Player::movement(float deltaTime) {
 
 	// Animation play
 	if (isMoving) {
-		float animationSpeed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? .15f : .25f;
+		float animationSpeed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? RUN_ANIM : WALK_ANIM;
 		sf::Texture& target_texture = (currentDirection == "up" || currentDirection == "down") ? texture_walk_vertical : texture_walk_horizontal;
 
 		if (currentDirection == "up") {
@@ -73,7 +73,7 @@ void Player::movement(float deltaTime) {
 				sprite,
 				target_texture,
 				oldVectorUP,
-				2, 16, 16,
+				4, 16, 16,
 				animationTimer,
 				animationSpeed,
 				deltaTime
@@ -85,7 +85,7 @@ void Player::movement(float deltaTime) {
 				sprite,
 				target_texture,
 				oldVectorDOWN,
-				2, 16, 16,
+				4, 16, 16,
 				animationTimer,
 				animationSpeed,
 				deltaTime
@@ -97,7 +97,7 @@ void Player::movement(float deltaTime) {
 				sprite,
 				target_texture,
 				oldVectorLEFT,
-				2, 16, 16,
+				4, 16, 16,
 				animationTimer,
 				animationSpeed,
 				deltaTime
@@ -109,7 +109,7 @@ void Player::movement(float deltaTime) {
 				sprite,
 				target_texture,
 				oldVectorRIGHT,
-				2, 16, 16,
+				4, 16, 16,
 				animationTimer,
 				animationSpeed,
 				deltaTime

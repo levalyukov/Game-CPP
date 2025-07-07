@@ -37,20 +37,15 @@ add_executable(Game
 "src/ui/core/elements/label.hpp"
 "src/ui/core/elements/button.cpp" 
 "src/ui/core/elements/button.hpp" 
-"src/ui/core/elements/panel.cpp"
-"src/ui/core/elements/panel.hpp"
 
 "src/ui/screens/hud.cpp"
 "src/ui/screens/hud.hpp"
-"src/ui/screens/pause.cpp" 
-"src/ui/screens/pause.hpp" 
 
 "src/core/debug/debug.cpp"
 "src/core/debug/debug.hpp"
 
 "src/core/resources/resources.hpp"
-"src/core/resources/resources.cpp"
-)
+"src/core/resources/resources.cpp")
 target_include_directories(Game PRIVATE ${SFML_INCLUDE_DIRS})
 target_link_libraries(Game PRIVATE sfml-system sfml-window sfml-audio sfml-graphics)
 

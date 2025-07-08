@@ -10,13 +10,13 @@ add_executable(Game
 "src/main.cpp" 
 "src/core/game.cpp" 
 
-"src/entities/player.cpp" 
 "src/economy/economy.hpp" 
 "src/economy/economy.cpp"
+
 "src/entities/entity-manager.hpp" 
-"src/entities/entity-manager.cpp" 
-"src/entities/entity.hpp" 
-"src/entities/entity.cpp" 
+"src/entities/entity.hpp"
+"src/entities/entities/player.cpp" 
+"src/entities/entities/player.hpp" 
 
 "src/core/tilemap/tilemap.cpp" 
 "src/core/tilemap/tilemap.hpp" 

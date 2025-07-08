@@ -9,13 +9,7 @@
 #include "../entities/entities/player.hpp"
 
 #include <iostream>
-#include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/Color.hpp>
-
-const std::string WINDOW_TITLE = "Delicious Soup";
-const int WINDOW_WIDTH = 1280;
-const int WINDOW_HEGHT = 720;
 
 class Game {
 	public:
@@ -23,6 +17,10 @@ class Game {
 		void run();
 
 	private:
+		const std::string WINDOW_TITLE = "Delicious Soup";
+		unsigned int WINDOW_WIDTH = 1280;
+		unsigned int WINDOW_HEGHT = 720;
+
 		sf::RenderWindow window;
 		sf::Color background = sf::Color(85, 110, 74);
 		sf::Event event;

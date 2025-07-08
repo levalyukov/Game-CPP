@@ -1,15 +1,16 @@
 #include "player.hpp"
 
-Player::Player() {
-	if (!texture_idle.loadFromFile("../../../assets/textures/entity/player/character_idle.png")) return;
-	if (!texture_walk_horizontal.loadFromFile("../../../assets/textures/entity/player/character_walk_horizontal.png")) return;
-	if (!texture_walk_vertical.loadFromFile("../../../assets/textures/entity/player/character_walk_vertical.png")) return;
-
-	sprite.setTexture(texture_idle);
-	sprite.setTextureRect(sf::IntRect(16, 0, 16, 16));
+Player::Player(
+	sf::Texture* character_idle,
+	sf::Texture* character_walk_horizontal,
+	sf::Texture* character_walk_vertical
+) : idle(std::move(*character_idle)),
+	walkHorizontal(std::move(*character_walk_horizontal)),
+	walkVertical(std::move(*character_walk_vertical)) {
+	sprite.setTexture(idle);
+	sprite.setTextureRect(sf::IntRect(16, 0, spriteSizeX.x, spriteSizeX.y));
 	sprite.setPosition((9 / 2) * 64, (9/2) * 64);
 	sprite.setScale(4, 4);
-	view.setSize({ 1280,720 });
 }
 
 void Player::render(sf::RenderWindow& window, float deltaTime, sf::View& gameView) {
@@ -66,7 +67,7 @@ void Player::movement(float deltaTime) {
 	// Animation play
 	if (isMoving) {
 		float animationSpeed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? RUN_ANIM : WALK_ANIM;
-		sf::Texture& target_texture = (currentDirection == "up" || currentDirection == "down") ? texture_walk_vertical : texture_walk_horizontal;
+		sf::Texture& target_texture = (currentDirection == "up" || currentDirection == "down") ? walkVertical : walkHorizontal;
 
 		if (currentDirection == "up") {
 			animations.setAnimation(
@@ -117,7 +118,7 @@ void Player::movement(float deltaTime) {
 		}
 	}
 	else {
-		sprite.setTexture(texture_idle);
+		sprite.setTexture(idle);
 		if (currentDirection == "up") {
 			sprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
 			oldVectorUP = vectorUP;

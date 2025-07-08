@@ -1,15 +1,12 @@
 #pragma once
 
-#include "../entities/player.hpp"
+#include "tilemap/tilemap.hpp"
+#include "resources/resources.hpp"
+
 #include "../entities/entity-manager.hpp"
-
-#include "../economy/economy.hpp"
-
 #include "../ui/core/ui.hpp"
 #include "../ui/screens/hud.hpp"
-
-#include "tilemap/tilemap.hpp"
-#include "debug/debug.hpp"
+#include "../entities/entities/player.hpp"
 
 #include <iostream>
 #include <SFML/Window.hpp>
@@ -26,27 +23,25 @@ class Game {
 		void run();
 
 	private:
-		void processEvent();
-		void render();
-		void initilizeIcon();
-
 		sf::RenderWindow window;
 		sf::Color background = sf::Color(85, 110, 74);
 		sf::Event event;
 		sf::Clock clock;
 		sf::View gameView;
-		sf::View uiView;
+		sf::View UIView;
 
-		// Game icon
-		sf::Image icon;
-		const sf::Uint8* pixelData;
+		void processEvent();
+		void render();
+		void initilizeIcon();
 
+		ResourceManager& resourceManager = ResourceManager::Instance();
 		UI uiManager;
-		Economy economyManager;
-		HUD hud{ uiManager };
-		Player player;
 		Tilemap tilemap;
 		EntityManager entityManager;
+		HUD hud{uiManager};
+
+		sf::Image icon;
+		const sf::Uint8* iconData;
 
 		float rawDelta = clock.restart().asSeconds();
 		float deltaTime = std::min(rawDelta, 0.1f);

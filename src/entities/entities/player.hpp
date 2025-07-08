@@ -1,35 +1,35 @@
 #pragma once
 
-#include <iostream>
-#include <SFML/Window.hpp>
+#include "../entity.hpp"
+#include "../../core/animations/animations.hpp"
+
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/Transformable.hpp>
 
-#include "../core/animations/animations.hpp"
-
-class Player {
+class Player : public Entity {
 	public:
-		Player();
-		void render(sf::RenderWindow& window, float deltaTime, sf::View& gameView);
+		Player(
+			sf::Texture* character_idle,
+			sf::Texture* character_walk_horizontal,
+			sf::Texture* character_walk_vertical
+		);
+
 		void movement(float deltaTime);
+		void render(sf::RenderWindow& window, float deltaTime, sf::View& gameCamera);
 
 	private:
-		// Player sprite
 		sf::Sprite sprite;
-		sf::Texture texture_walk_vertical;
-		sf::Texture texture_walk_horizontal;
-		sf::Texture texture_idle;
-		sf::View view;
+		sf::Texture idle;
+		sf::Texture walkHorizontal;
+		sf::Texture walkVertical;
+		sf::Vector2i spriteSizeX {16,16};
+		const float RUN_SPEED = 6.0f;
+		const float WALK_SPEED = 4.0f;
 
-		// Animations
 		Animations animations;
 
 		std::string direction;
 		std::string currentDirection;
 		std::string oldDirection;
-
-		const float RUN_SPEED = 6.0f;
-		const float WALK_SPEED = 4.0f;
 
 		const float RUN_ANIM = 0.10f;
 		const float WALK_ANIM = 0.15f;

@@ -3,28 +3,27 @@
 #include "entity.hpp"
 
 #include <map>
-#include <iostream>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
 
 class EntityManager {
 	public:
-		std::map <int, std::unique_ptr<Entity>> entities;
-		int nextID = 0;
+		inline void addEntity(std::string name, std::unique_ptr<Entity> entity) { 
+			entities.emplace(name, std::move(entity));
+		};
 
-		void addEntity(
-			std::string name, 
-			sf::Sprite& sprite, 
-			sf::Vector2f position, 
-			bool hasCollision
-		);
-		Entity* getEntity(int id);
-		void removeEntity(int enitityID);
+		inline Entity* getEntity(std::string enitityName) {
+			auto entity = entities.find(enitityName);
+			return (entity != entities.end()) ? entity->second.get() : nullptr;
+		};
+
+		inline void removeEntity(std::string enitityName) { 
+			if (entities.find(enitityName) != entities.end()) entities.erase(enitityName);
+		};
 		
-		void render(sf::RenderWindow& window);
+		inline void render(sf::RenderWindow& window, float deltaTime,sf::View& gameCamera) {
+			if (entities.empty()) return;
+			for (auto& object : entities) object.second->render(window, deltaTime, gameCamera);
+		};
 
 	private:
-		sf::Sprite cashDeskSprite;
-		sf::Texture cashDeskTexture;
-		
+		std::map <std::string, std::unique_ptr<Entity>> entities;
 };

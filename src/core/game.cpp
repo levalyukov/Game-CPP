@@ -6,7 +6,20 @@ Game::Game() {
 	initilizeIcon();
 
 	gameView = window.getDefaultView();
-	uiView = window.getDefaultView();
+	UIView = window.getDefaultView();
+
+	resourceManager.loadTexture("character-idle", "../../../assets/textures/entity/player/character_idle.png");
+	resourceManager.loadTexture("character-walk-horizontal", "../../../assets/textures/entity/player/character_walk_horizontal.png");
+	resourceManager.loadTexture("character-walk-vertical", "../../../assets/textures/entity/player/character_walk_vertical.png");
+
+	entityManager.addEntity(
+		"player",
+		std::make_unique<Player>(
+			resourceManager.getTexture("character-idle"),
+			resourceManager.getTexture("character-walk-horizontal"),
+			resourceManager.getTexture("character-walk-vertical")
+		)
+	);
 }
 
 void Game::run() {
@@ -30,18 +43,16 @@ void Game::render() {
 	// Game
 	window.setView(gameView);
 	tilemap.render(window);
-	player.render(window, deltaTime, gameView);
-	entityManager.render(window);
+	entityManager.render(window, deltaTime, gameView);
 
 	// User Interface
-	window.setView(uiView);
+	window.setView(UIView);
 	uiManager.render(event, window);
-
 	window.display();
 }
 
 void Game::initilizeIcon() {
 	if (!icon.loadFromFile("../../../assets/icon.png")) return;
-	pixelData = icon.getPixelsPtr();
-	window.setIcon(icon.getSize().x, icon.getSize().y, pixelData);
+	iconData = icon.getPixelsPtr();
+	window.setIcon(icon.getSize().x, icon.getSize().y, iconData);
 }

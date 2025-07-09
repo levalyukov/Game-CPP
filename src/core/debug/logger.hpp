@@ -1,7 +1,7 @@
 class Logger {
   public:
     static Logger& Instance() {
-      static Logger& l;
+      static Logger l;
       return l;
     };
 

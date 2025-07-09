@@ -1,5 +1,9 @@
 class Logger {
   public:
+    static Logger& Instance() {
+      static Logger& l;
+      return l;
+    };
 
   private:
     Logger() {};

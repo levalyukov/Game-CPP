@@ -35,10 +35,10 @@ class Game {
 		void initilizeIcon();
 
 		ResourceManager& resourceManager = ResourceManager::Instance();
-		UI uiManager;
+		UIManager& UIManager = UIManager::Instance();
 		Tilemap tilemap;
 		EntityManager entityManager;
-		HUD hud{uiManager};
+		HUD hud;
 
 		sf::Image icon;
 		const sf::Uint8* iconData;

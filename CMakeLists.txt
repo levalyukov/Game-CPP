@@ -35,7 +35,6 @@ add_executable(Game
 "src/ui/core/elements/button.cpp" 
 "src/ui/core/elements/button.hpp" 
 
-"src/ui/screens/hud.cpp"
 "src/ui/screens/hud.hpp"
 
 "src/core/debug/debug.cpp"

@@ -3,16 +3,24 @@
 #include "../../core/resources/resources.hpp"
 #include "../core/ui.hpp"
 
-#include <iostream>
-
 class HUD {
 	public:
-		HUD(UI& uiManager);
+		HUD() {
+			resource.loadFont("nunito", "../../../assets/fonts/nunito.ttf");
+			resource.loadFont("arial", "../../../assets/fonts/arial.ttf");
 
-		void loadAllFonts();
-		void createHUD();
+			ui.addElement(
+				"Label",
+				ui.gui.createLabel(
+					"Text",
+					resource.getFont("nunito"),
+					24, sf::Color::White,
+					{ 25,25 }, UIElement::BottomCenter
+				)
+			);
+		};
 
 	private:
-		UI& ui_ref;
-		ResourceManager& resourceManager = ResourceManager::Instance();
+		ResourceManager& resource = ResourceManager::Instance();
+		UIManager& ui = UIManager::Instance();
 };

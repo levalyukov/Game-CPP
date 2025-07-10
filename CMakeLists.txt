@@ -27,18 +27,14 @@ add_executable(Game
 "src/core/audio/audio.cpp" 
 "src/core/audio/audio.hpp" 
 
-"src/ui/core/ui.cpp"
 "src/ui/core/ui.hpp"
-"src/ui/core/gui.cpp"
 "src/ui/core/gui.hpp"
 
 "src/ui/core/elements/ui-element.hpp"
-"src/ui/core/elements/label.cpp"
 "src/ui/core/elements/label.hpp"
 "src/ui/core/elements/button.cpp" 
 "src/ui/core/elements/button.hpp" 
 
-"src/ui/screens/hud.cpp"
 "src/ui/screens/hud.hpp"
 
 "src/core/debug/debug.cpp"

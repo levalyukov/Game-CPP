@@ -1,6 +1,8 @@
 #include "game.hpp";
 
 Game::Game() {
+	sf::err().setstate(std::ios_base::failbit);
+
 	window.create(sf::VideoMode({ WINDOW_WIDTH, WINDOW_HEGHT }), WINDOW_TITLE);
 	window.setFramerateLimit(60);
 	initilizeIcon();
@@ -20,6 +22,8 @@ Game::Game() {
 			resourceManager.getTexture("character-walk-vertical")
 		)
 	);
+
+	logger.log(Logger::Error, "test");
 }
 
 void Game::run() {
@@ -52,7 +56,10 @@ void Game::render() {
 }
 
 void Game::initilizeIcon() {
-	if (!icon.loadFromFile("../../../assets/icon.png")) return;
+	if (!icon.loadFromFile("../../../assets/icon.png3")) {
+		logger.log(Logger::Error, "Unable to load game icon: incorrect path to file.");
+		return;
+	};
 	iconData = icon.getPixelsPtr();
 	window.setIcon(icon.getSize().x, icon.getSize().y, iconData);
 }
